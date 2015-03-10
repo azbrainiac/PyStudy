@@ -20,6 +20,11 @@ class Drobe:
 
 		return Drobe(newnum//common, newden//common)
 
+	def __eq__(self, otherfraction):
+		newselfnum = self.num * otherfraction.den
+		newothernum = otherfraction.num * self.den
+		return newselfnum == newothernum
+
 def gcd (m, n): 
 	while m%n != 0:
 		oldm = m
@@ -38,3 +43,5 @@ print(myfraction)
 print(Drobe(3, 5) + Drobe(5, 3))
 print(gcd(35, 14))
 print(Drobe(3, 5) + Drobe(6, 10))
+print(Drobe(3, 5) == Drobe(5, 3))
+print(Drobe(3, 5) == Drobe(3, 5))
