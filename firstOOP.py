@@ -17,7 +17,6 @@ class Drobe:
 		newden = self.den * otherfraction.den
 		common = gcd(newnum, newden)
 
-
 		return Drobe(newnum//common, newden//common)
 
 	def __eq__(self, otherfraction):
@@ -25,13 +24,13 @@ class Drobe:
 		newothernum = otherfraction.num * self.den
 		return newselfnum == newothernum
 
-def gcd (m, n): 
-	while m%n != 0:
+
+def gcd(m, n):
+	while m % n != 0:
 		oldm = m
 		oldn = n
-
 		m = oldn
-		n = oldm%oldn
+		n = oldm % oldn
 	return n
 
 myfraction = Drobe(3, 5)
